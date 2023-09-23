@@ -12,9 +12,28 @@ export default function App() {
     <>
       <StatusBar style="DARK" />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="MealCategory" component={CategoriesScreen} />
-          <Stack.Screen name="MealsOverview" component={MealsOverViewScreen}/>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: styles.header,
+            headerTintColor: "white",
+            contentStyle: { backgroundColor: "#333" },
+          }}
+        >
+          <Stack.Screen
+            name="MealCategory"
+            component={CategoriesScreen}
+            options={{
+              title: "Danh mục món ăn",
+              // headerStyle: styles.header,
+              // headerTintColor: "white",
+              // contentStyle: { backgroundColor: "#333" },
+            }}
+          />
+          <Stack.Screen name="MealsOverview" component={MealsOverViewScreen}
+          //  options={({route})=> {
+          //   const cat = route.params.categoryId;
+          //   return{title:cat}}} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
@@ -27,5 +46,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  header: {
+    backgroundColor: "#351",
   },
 });
