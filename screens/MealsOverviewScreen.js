@@ -23,13 +23,14 @@ function MealsOverViewScreen({route,navigation}) {
     function renderMealItem(itemData) {
         let item = itemData.item;
         let mealItemProps = {
+            id: item.id,
             title: item.title,
             imageUrl: item.imageUrl,
             affordability: item.affordability,
             duration: item.duration,
             complexity: item.complexity
         }
-        return<MealItem {...mealItemProps}/>;
+        return <MealItem {...mealItemProps}/>;
 
     }
 
