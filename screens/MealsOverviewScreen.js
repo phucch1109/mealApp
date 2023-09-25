@@ -1,3 +1,4 @@
+
 import { StyleSheet, Text, View ,FlatList} from "react-native";
 import { MEALS ,CATEGORIES} from "../data/dummy-data";
 import MealItem from "../components/MealItem";
@@ -13,7 +14,6 @@ function MealsOverViewScreen({route,navigation}) {
 
     useLayoutEffect(() => {
         const categoryTitle = CATEGORIES.find((x) => x.id === cateID).title;
-        console.log(categoryTitle);
         navigation.setOptions({title:categoryTitle});
     },[cateID,navigation])
 
